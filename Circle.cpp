@@ -1,7 +1,7 @@
 #include"openGL/glew.h"
 #include<cmath>
 #include"openGL/freeglut.h"
-#include "Circle.h"
+#include "Circle.hpp"
 
 
 

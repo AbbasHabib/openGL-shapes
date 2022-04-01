@@ -1,6 +1,6 @@
 #pragma once
-#include"util.h"
-#include"IDrawable.h"
+#include"util.hpp"
+#include"IDrawable.hpp"
 class Circle : public IDrawable
 {
 private:

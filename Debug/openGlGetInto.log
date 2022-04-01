@@ -1,9 +1,9 @@
 ﻿  Circle.cpp
-C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\util.h(13,3): warning C4091: 'typedef ': ignored on left of 'util::Color' when no variable is declared
+C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\util.hpp(13,3): warning C4091: 'typedef ': ignored on left of 'util::Color' when no variable is declared
 C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\Circle.cpp(30,49): warning C4305: '+=': truncation from 'double' to 'float'
 C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\Circle.cpp(32,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   openGlGetInto.cpp
 C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\Circle.cpp(33,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\util.h(13,3): warning C4091: 'typedef ': ignored on left of 'util::Color' when no variable is declared
+C:\Users\Youssef Abbas\source\repos\openGlGetInto\openGlGetInto\util.hpp(13,3): warning C4091: 'typedef ': ignored on left of 'util::Color' when no variable is declared
   openGlGetInto.vcxproj -> C:\Users\Youssef Abbas\source\repos\openGlGetInto\Debug\openGlGetInto.exe

@@ -3,9 +3,9 @@
 #include <iostream>
 #include <vector>
 
-#include"IDrawable.h"
-#include"Circle.h"
-#include"util.h"
+#include"IDrawable.hpp"
+#include"Circle.hpp"
+#include"util.hpp"
 
 
 #pragma comment(lib, "glew32.lib")
