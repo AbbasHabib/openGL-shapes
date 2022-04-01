@@ -153,8 +153,10 @@
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="openGlGetInto.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Triangle.hpp" />
     <ClInclude Include="util.hpp" />
     <ClInclude Include="Circle.hpp" />
     <ClInclude Include="IDrawable.hpp" />

@@ -1,6 +1,5 @@
 #pragma once
-namespace util
-{
+namespace util {
 	/*enter color in BGR from 1.0f to 0.0f*/
 	typedef struct Color {
 		float b = 0, g = 0, r = 0;
@@ -12,4 +11,13 @@ namespace util
 		Color() {}
 	};
 
+
+	typedef struct Point {
+		float x = 0, y = 0;
+		Point(float _x, float _y) {
+			x = _x;
+			y = _y;
+		}
+		Point() {}
+	};
 }

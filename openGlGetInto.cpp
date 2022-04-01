@@ -3,9 +3,10 @@
 #include <iostream>
 #include <vector>
 
+#include"util.hpp"
 #include"IDrawable.hpp"
 #include"Circle.hpp"
-#include"util.hpp"
+#include"Triangle.hpp"
 
 
 #pragma comment(lib, "glew32.lib")
@@ -13,8 +14,8 @@
 #pragma comment(lib, "freeglut.lib")
 
 
-
 std::vector<IDrawable*> objectsToRender;
+
 
 void initDrawing() 
 {
@@ -32,6 +33,14 @@ void drawLoop()
 		objectToRender->render();
 	}
 
+	//glBegin(GL_TRIANGLES);
+	//glColor3f(0.1, 0.2, 0.3);
+	//glVertex3f(0, 0, 0);
+	//glVertex3f(1, 0, 0);
+	//glVertex3f(0, 1, 0);
+	//glEnd();
+
+
 	glutSwapBuffers();
 }
 
@@ -41,12 +50,27 @@ int main(int argc, char* argv[]) {
 	glutInit(&argc, argv);
 
 	
-	objectsToRender.push_back(new Circle(0.5f, 0.2f, 0.2f, util::Color{1, 0, 0}));
+	objectsToRender.push_back(new Circle(0.1f, 0.3f, 0.5f, util::Color{1, 0, 0}));
+	objectsToRender.push_back(new Circle(0.1f, 0.5f, 0.2f, util::Color{ 1, 0, 0 }));
+	objectsToRender.push_back(new Circle(0.1f, -0.2f, -0.2f, util::Color{ 1, 0, 0 }));
+	objectsToRender.push_back(new Circle(0.1f, -0.4f, -0.4f, util::Color{ 0, 0, 1 }));
+
+
+	objectsToRender.push_back(new Triangle(
+		util::Point{ 0, 0 },
+		util::Point{ 1, 0 },
+		util::Point{ 0, 1 },
+		util::Color{ 0, 1, 0 }));
+
+
+
+
+
+
 
 	initDrawing();
 
 	glutDisplayFunc(drawLoop);
-
 
 	glutMainLoop();
 	return 0;

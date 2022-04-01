@@ -12,5 +12,4 @@ public:
 	Circle(float rad, float x, float y, util::Color color);
 
 	void render();
-
 };
