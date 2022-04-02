@@ -1,29 +1,39 @@
-#include"openGL/glew.h"
-#include"openGL/freeglut.h"
+/* C++ standard libs */
 #include <iostream>
 #include <vector>
 
+
+/* Frame work (openGL)*/
+#include"openGL/glew.h"
+#include"openGL/freeglut.h"
+
+
+/* Custom made libs */
 #include"util.hpp"
 #include"IDrawable.hpp"
 #include"Circle.hpp"
 #include"Triangle.hpp"
 
 
-#pragma comment(lib, "glew32.lib")
-#pragma comment(lib, "glew32s.lib")
-#pragma comment(lib, "freeglut.lib")
+/* Passing lib files to linker*/
+#pragma comment(lib, "./openGL/glew32.lib")
+#pragma comment(lib, "./openGL/glew32s.lib")
+#pragma comment(lib, "./openGL/freeglut.lib")
 
 
 std::vector<IDrawable*> objectsToRender;
 
 
-void initDrawing() 
+// View
+void initDrawing()
 {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowSize(600, 600);
 	glutCreateWindow("hello");
 	glClearColor(0, 0, 0, 1);
 }
+
+
 
 void drawLoop()
 {
@@ -37,21 +47,21 @@ void drawLoop()
 }
 
 
+// Controller
 void timeOutNextUpdate(int x)
 {
 	glutPostRedisplay(); // Mark the normal plane of current window as needing to be redisplayed. 
 	glutTimerFunc(1000 / 60, timeOutNextUpdate, 0);
 
-
 	for (IDrawable* objectToGetUpdate : objectsToRender) 
 	{
 		if (dynamic_cast<Circle*>(objectToGetUpdate) != 0) 
-		{	// then it's a circle
+		{	//  it's a circle
 			((Circle*)objectToGetUpdate)->updateCircleParamsBy(0, 0.01f, 0);
 		}
 		else if (dynamic_cast<Triangle*>(objectToGetUpdate) != 0) 
-		{	// then it's a triangle
-
+		{	//  it's a triangle
+			
 		}
 	}
 

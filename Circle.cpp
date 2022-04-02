@@ -19,7 +19,7 @@ void Circle::render()
 {
 	float x1, y1, x2, y2;
 	float angle;
-	double radius = this->rad;
+	float radius = this->rad;
 
 	x1 = this->x, y1 = this->y;
 	glColor3f(this->color.r, this->color.g, this->color.b);
@@ -27,7 +27,7 @@ void Circle::render()
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex2f(x1, y1);
 
-	for (angle = 1.0f; angle < 361.0f; angle += 0.2)
+	for (angle = 1.0f; angle < 361.0f; angle += 0.2f)
 	{
 		x2 = x1 + sin(angle) * radius;
 		y2 = y1 + cos(angle) * radius;
