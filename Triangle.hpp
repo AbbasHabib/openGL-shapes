@@ -10,4 +10,9 @@ public:
 	Triangle(util::Point p1, util::Point p2, util::Point p3, util::Color color);
 
 	void render();
+
+	void updateTriangleParamsBy(util::Point p1, util::Point p2, util::Point p3);
+
+
+	void updateColor(util::Color c);
 };

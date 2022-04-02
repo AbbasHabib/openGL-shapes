@@ -37,3 +37,20 @@ void Circle::render()
 	glEnd();
 
 }
+
+
+
+void Circle::updateCircleParamsBy(float rad, float x, float y) 
+{
+	this->rad += rad;
+	this->x += x;
+	this->y += y;
+}
+
+
+void Circle::updateColor(util::Color color)
+{
+	this->color.b = color.b;
+	this->color.g = color.g;
+	this->color.r = color.r;
+}

@@ -29,23 +29,38 @@ void drawLoop()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	for (IDrawable *objectToRender : objectsToRender) {
+	for (IDrawable* objectToRender : objectsToRender)
+	{
 		objectToRender->render();
 	}
-
-	//glBegin(GL_TRIANGLES);
-	//glColor3f(0.1, 0.2, 0.3);
-	//glVertex3f(0, 0, 0);
-	//glVertex3f(1, 0, 0);
-	//glVertex3f(0, 1, 0);
-	//glEnd();
-
-
 	glutSwapBuffers();
 }
 
 
-int main(int argc, char* argv[]) {
+void timeOutNextUpdate(int x)
+{
+	glutPostRedisplay(); // Mark the normal plane of current window as needing to be redisplayed. 
+	glutTimerFunc(1000 / 60, timeOutNextUpdate, 0);
+
+
+	for (IDrawable* objectToGetUpdate : objectsToRender) 
+	{
+		if (dynamic_cast<Circle*>(objectToGetUpdate) != 0) 
+		{	// then it's a circle
+			((Circle*)objectToGetUpdate)->updateCircleParamsBy(0, 0.01f, 0);
+		}
+		else if (dynamic_cast<Triangle*>(objectToGetUpdate) != 0) 
+		{	// then it's a triangle
+
+		}
+	}
+
+}
+
+
+
+int main(int argc, char* argv[])
+{
 
 	glutInit(&argc, argv);
 
@@ -63,57 +78,11 @@ int main(int argc, char* argv[]) {
 		util::Color{ 0, 1, 0 }));
 
 
-
-
-
-
-
 	initDrawing();
 
 	glutDisplayFunc(drawLoop);
+	glutTimerFunc(0, timeOutNextUpdate, 0); //registers the timer callback func to be triggered msecs milliseconds
 
 	glutMainLoop();
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-		glPointSize(5);
-
-		//glBegin(GL_POINTS);
-
-		//	glVertex2f(-0.1f, 0.1f);
-		//	glVertex2f(0.1f, 0.1f);
-		//	glVertex2f(0.1f, -0.1f);
-		//	glVertex2f(-0.1f, -0.1f);
-
-		//glEnd();
-
-
-		//glBegin(GL_POINTS);
-
-		//	glVertex2f(-0.5f, 0.5f);
-		//	glVertex2f(0.5f, 0.5f);
-		//	glVertex2f(0.5f, -0.5f);
-		//	glVertex2f(-0.5f, -0.5f);
-
-		//glEnd();
-		//glBegin(GL_QUADS);
-
-		//glVertex2f(x1, y1);
-		//glVertex2f(x2, y1);
-		//glVertex2f(x2, y2);
-		//glVertex2f(x1, y2);
-
-		//glEnd();
-*/
